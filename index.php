@@ -46,21 +46,29 @@
   <h3 align="center">ACTUALITE</h3>
   <hr width="80%" size="0.25" color="#ccc">
 	<div class="row block-article">
-    <?php
-      $nombre_articles = 1 ;
-        while ($nombre_articles <= 6):?>
+    <!-- Debut de la boucle -->
+    <?php if (have_posts()) : ?>
+      <?php while (have_posts()) : the_post(); ?>
 	        <div class="card article col-sm-4">
-	            <img src="<?php bloginfo('template_url')?>/img/Médecine-quantique.jpg" class="card-img-top" alt="...">
+	            <div class="card-img-top" alt="...">
+                <?php
+                  if ( has_post_thumbnail_or_image ()) { 
+                      the_post_thumbnail( "post-thumb" ); 
+                  }
+                ?>
+              </div>
 	            <div class="card-body">
 	              <p class="card-text">
-	                  <h5 class="title"><a href="#">La chirurgie ambulatoire, la nouvelle façon d’opérer</a></h5>
-	          <p>27 Déc 2011, Aucun commentaire sur La chirurgie ambulatoire, la nouvelle façon d’opérer</p>
+	                  <h5 class="title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h5>
+	          <p>
+              <span class="time"><?php the_time('l d/m, Y');?></span>
+              <span class="excerpt"><?php medicalnews_excerpt(80);?></span>
+            </p>
 	            </div>
 	        </div>
-		<?php
-				$nombre_articles++;
-				endwhile;
-    ?>
+      <!-- Fin de la boucle -->
+      <?php endwhile; ?> 
+    <?php endif;?>
   </div>
 </section>
 <!-- Insertion du fichier footer.php-->

@@ -69,7 +69,6 @@ header .logo a{
 
 }
 .carousel-container .slide img{
-	opacity: 0.5;
 	width: 100%;
 }
 .slide-article{
@@ -116,7 +115,7 @@ header .logo a{
 }
 
 .block-article{
-	justify-content: space-around;
+	/* justify-content: space-around; */
 	font-family: montserrat;
 	color:#272727;
 	margin-bottom: 30px;
@@ -134,7 +133,17 @@ header .logo a{
 	font-size: 0.8em;
 }
 .block-article .title a{
+	text-decoration: none;
 	color: #212529;
+}
+.block-article .title a:hover{
+	color: #feb236;
+	
+}
+.block-article .time{
+	text-transform: uppercase;
+	color: #8f6d0c;
+
 }
 section h3{
 	padding: 20px;
@@ -171,7 +180,7 @@ footer .col-sm a{
 .block-info{
 	margin-top: 28px;
 }
-.block-info h3{
+.single-post .title{
 	border-left: 10px solid #feb236;
 	background-color: #ccc;
 	padding-left: 10px;
@@ -181,18 +190,20 @@ footer .col-sm a{
 
 /* archive style*/
 
-.slide_archive{
+.slide-archive{
 	width: 100%;
 	background-size: cover;
 	height: 100px;
 	position: relative;
 	background-color: #192E65;
+	overflow: hidden;
 }
-.slide_archive img{
-	opacity: 0.5;
-	height: 100px;
+.slide-archive img{
+	opacity: .4;
+	height: auto;
+	width: 100%;
 }
-.slide_archive .slide-article{
+.slide-archive .slide-article{
 	width: 100%;
 	background:none;
 	text-align: center;
@@ -200,9 +211,7 @@ footer .col-sm a{
 	color: #fff;
 	bottom: 0px;
 }
-.info-container{
-	padding-top: 25px;
-}
+
 .info{
 	box-shadow:  0px 0px 3px 0px rgba(0, 0, 0, 0.2);
 }
@@ -225,4 +234,7 @@ footer .col-sm a{
 	list-style: none;
 	padding: 5px;
 
+}
+.main-container {
+	padding-top: 30px;
 }
