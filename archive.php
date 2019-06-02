@@ -1,4 +1,5 @@
-<?php include "header.php"; ?>
+<?php 
+get_header(); ?>
       <div class="row">
         <div class="slide-archive">
           <img src="<?php bloginfo('template_url')?>/img/slide-archive-background.jpg">
@@ -32,8 +33,18 @@
             <!-- Fin de la boucle -->
             <?php endwhile; ?> 
           <?php endif;?>
+
+          <!-- Pagination, after the loop -->
+          <div class="pagination-wrapper" >
+            <?php the_posts_pagination( array(
+                'mid_size' => 2,
+                'prev_text' => __( '&laquo;', 'medicalnews' ),
+                'next_text' => __( '&raquo;', 'medicalnews' ),
+                'screen_reader_text' => ' '
+            ) ); ?>
+          </div> 
         </div>
-        <?php include "sidebar.php"; ?>
+        <?php get_sidebar()?>
       </div>
        
-<?php include "footer.php"; ?>
+<?php get_footer()?>

@@ -1,5 +1,7 @@
 <aside class="col-sm-4">
-  <?php if ( ! is_active_sidebar( 'widgets_sidebar' ) ) {
+  <?php 
+  // Verify wether the sidebar is registed in functions.php
+  if ( ! is_active_sidebar( 'widgets_sidebar' ) ) {
       return;
     }
   ?>

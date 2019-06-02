@@ -11,7 +11,7 @@
                 <?php the_content(); ?>
               </section>
           </section>
-          <?php include "sidebar.php"; ?>
+          <?php get_sidebar()?>
         </section>
     <!-- fin de la boucle -->
     <?php endwhile; ?> 

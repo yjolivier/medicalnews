@@ -114,3 +114,72 @@ function widgets_sidebar() {
 
 }
 add_action( 'widgets_init', 'widgets_sidebar' );
+
+/**
+ * Create a default Menu called "primary"
+ * This menu will be recognized by WordPress and displayed in the header
+ * @link https://codex.wordpress.org/Function_Reference/register_nav_menus
+ * @link http://arts-numeriques.codedrops.net/Plus-Ajouter-la-fonction-de-menu
+ * @link https://www.wpbeginner.com/wp-themes/how-to-add-custom-navigation-menus-in-wordpress-3-0-themes/
+ */
+
+	register_nav_menus( array(
+		'primary' => esc_html__( 'Primary', 'medicalnews' ),
+	) );
+
+/**
+ * Create a custom class for the menu, based on Walker_Nav_Menu
+ * @link https://developer.wordpress.org/reference/classes/walker_nav_menu/
+ * @link https://wabeo.fr/construire-walker-wordpress/
+ */
+class Multilevel_Menu extends Walker_Nav_Menu
+{
+   function start_lvl(&$output, $depth = 0, $args = array())
+   {
+	   $indent = str_repeat("\t", $depth);
+	   $output .= "\n$indent<ul class=\"dropdown\">\n";
+   }
+   function end_lvl(&$output, $depth = 0, $args = array())
+   {
+	   $indent = str_repeat("\t", $depth);
+	   $output .= "$indent</ul>\n";
+   }
+	// adding arrow to top-menu
+	function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
+		if ( !$element )
+				return;
+		$id_field = $this->db_fields['id'];
+		//display this element
+		if ( is_array( $args[0] ) )
+				$args[0]['has_children'] = ! empty( $children_elements[$element->$id_field] );
+		//Adds the 'parent' class to the current item if it has children               
+		if( ! empty( $children_elements[$element->$id_field] ) ) {
+				array_push($element->classes,'has-dropdown not-click');
+				//$element->title .= ' <i class="fa fa-caret-down"></i>';
+		}
+		$cb_args = array_merge( array(&$output, $element, $depth), $args);
+		call_user_func_array(array(&$this, 'start_el'), $cb_args);
+		$id = $element->$id_field;
+		// descend only when the depth is right and there are childrens for this element
+		if ( ($max_depth == 0 || $max_depth > $depth+1 ) && isset( $children_elements[$id]) ) {
+				foreach( $children_elements[ $id ] as $child ){
+						if ( !isset($newlevel) ) {
+								$newlevel = true;
+								//start the child delimiter
+								$cb_args = array_merge( array(&$output, $depth), $args);
+								call_user_func_array(array(&$this, 'start_lvl'), $cb_args);
+						}
+						$this->display_element( $child, $children_elements, $max_depth, $depth + 1, $args, $output );
+				}
+				unset( $children_elements[ $id ] );
+		}
+		if ( isset($newlevel) && $newlevel ){
+				//end the child delimiter
+				$cb_args = array_merge( array(&$output, $depth), $args);
+				call_user_func_array(array(&$this, 'end_lvl'), $cb_args);
+		}
+		//end this element
+		$cb_args = array_merge( array(&$output, $element, $depth), $args);
+		call_user_func_array(array(&$this, 'end_el'), $cb_args);
+	}
+}

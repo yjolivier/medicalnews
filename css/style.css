@@ -1,3 +1,6 @@
+a {
+	color: #feb236;
+}
 body{
 	background-image:url(../img/back.png);
 }
@@ -349,3 +352,48 @@ aside .recent-posts-box ul li a {
 
 .widget ul li a:hover {
   color: #3da05b; }
+
+/*
+================================================================================================
+Pagination
+================================================================================================
+*/
+.pagination-wrapper {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.page-numbers, .nav-links div {
+  font-family: "Montserrat", "Georgia", sans-serif;
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 0 2px 0 0;
+  border: 1px solid #feb236;
+  line-height: 1;
+  text-decoration: none;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 1em; }
+
+.page-numbers.current,
+a.page-numbers:hover {
+  background: #feb236;
+  color: #FFF; }
+
+span.page-numbers.dots {
+  color: #feb236; }
+
+.pagination-wrapper {
+  margin: 15px 0px; }
+
+ul.pagination li.current a,
+ul.pagination li.current button {
+  background: #feb236; }
+
+ul.pagination li a, ul.pagination li {
+  font-size: 1em;
+  font-family: "Montserrat", "Georgia", sans-serif; }
+
+ul.pagination li.current a:hover, ul.pagination li.current a:focus, ul.pagination li.current button:hover, ul.pagination li.current button:focus {
+  background: #feb236; }

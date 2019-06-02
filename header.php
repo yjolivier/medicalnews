@@ -13,7 +13,7 @@
 		<div class="container">
 			<header class="row">
 				<div class="col-sm-3 logo">
-					<a href="index.php">
+					<a href="<?php bloginfo('url')?>">
 					<h2>
 						Medical news
 					</h2>
@@ -21,13 +21,21 @@
 					<h5>Actualité medical</h5>
 				</div>
 				<div class="col-sm-7 menu">
-					<ul>
-						<li class="menu-actif" ><a href="index.php">ACCUEIL</a></li>
-						<li><a href="archive.php">VACCIN</a></li>
-						<li><a href="archive.php">CHIRURGIE</a></li>
-						<li><a href="single.php">CONTACT</a></li>
-						<li><a href="archive.php">MEDECINE</a></li>
-					</ul>
+					<?php
+		                /* Dynamic menu */
+		                if(function_exists('wp_nav_menu')) {
+		                    wp_nav_menu(array(
+		                    'theme_location' => 'primary',
+		                    'container' => '',
+		                    'container_class' => '',
+		                    'container_id' => '',
+		                    'menu_id' => 'main-menu',
+		                    'menu_class' => 'main-nav',
+		                    'fallback_cb' => '',
+		                    'walker' => new Multilevel_Menu()
+		                    )); 
+		                }
+		            ?>
 				</div>
 				<div class="col-sm-2">
 					<nav class="search-form">

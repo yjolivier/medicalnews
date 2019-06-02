@@ -69,6 +69,15 @@
       <!-- Fin de la boucle -->
       <?php endwhile; ?> 
     <?php endif;?>
+    <!-- Pagination, after the loop -->
+    <div class="pagination-wrapper" >
+      <?php the_posts_pagination( array(
+          'mid_size' => 2,
+          'prev_text' => __( '&laquo;', 'medicalnews' ),
+          'next_text' => __( '&raquo;', 'medicalnews' ),
+          'screen_reader_text' => ' '
+      ) ); ?>
+    </div> 
   </div>
 </section>
 <!-- Insertion du fichier footer.php-->
