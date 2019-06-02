@@ -1,12 +1,9 @@
-<div class="col-sm-4">
-          <section class="info">
-            <h3>ARTICLE RECENTS</h3>
-            <ul>
-              <li><a href="#">Base de données africaine Index Medicus<br>Documents publiés en Afrique ou qui renvoient à ce continent </a></li>
-              <li><a href="#">Base de données africaine Index Medicus<br>Documents publiés en Afrique ou qui renvoient à ce continent </a></li>
-              <li><a href="#">Base de données africaine Index Medicus<br>Documents publiés en Afrique ou qui renvoient à ce continent </a></li>
-              <li><a href="#">Base de données africaine Index Medicus<br>Documents publiés en Afrique ou qui renvoient à ce continent </a></li>
-              <li><a href="#">Base de données africaine Index Medicus<br>Documents publiés en Afrique ou qui renvoient à ce continent </a></li>
-            </ul>
-          </section>
-</div>
+<aside class="col-sm-4">
+  <?php if ( ! is_active_sidebar( 'widgets_sidebar' ) ) {
+      return;
+    }
+  ?>
+
+  <!-- dynamic sidebar -->
+  <?php dynamic_sidebar( 'widgets_sidebar' ); ?>
+</aside>

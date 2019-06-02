@@ -1,5 +1,15 @@
 <?php
 /*
+ * Enable support for Post Thumbnails on posts and pages.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+ */
+add_theme_support( 'post-thumbnails' );
+add_image_size( 'post-thumb', 350, 200, array( 'center', 'top' ) );
+add_image_size( 'single-thumb', 770, 330, array( 'center', 'top' ) );
+add_image_size( 'slider-cover', 1100, 400, array( 'center', 'top' ) );
+
+/*
  * Check if thumbnail or firstImage exist
  *
  */
@@ -85,12 +95,22 @@ function medicalnews_excerpt($max_char, $more_link_text = '...',$notagp = false,
 	  }
    }
 }
-/*
- * Enable support for Post Thumbnails on posts and pages.
+
+/**
+ * Configuring widgets
  *
- * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-add_theme_support( 'post-thumbnails' );
-add_image_size( 'post-thumb', 350, 200, array( 'center', 'top' ) );
-add_image_size( 'single-thumb', 770, 330, array( 'center', 'top' ) );
-add_image_size( 'slider-cover', 1100, 400, array( 'center', 'top' ) );
+function widgets_sidebar() {
+
+	register_sidebar( array(
+		'name'          => 'Widgets sidebar',
+		'id'            => 'widgets_sidebar',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h5 class="widget-title">',
+		'after_title'   => '</h5>',
+	) );
+
+}
+add_action( 'widgets_init', 'widgets_sidebar' );
