@@ -123,6 +123,7 @@ header .logo a{
 	color:#272727;
 	margin-bottom: 30px;
 	margin-top: 0px;
+	overflow: hidden;
 }
 .block-article .article img{
 	height: 200px;

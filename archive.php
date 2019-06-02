@@ -9,11 +9,11 @@ get_header(); ?>
         </div>
       </div>
       <div class="row main-container">
-        <div class="row block-article col-sm-8">
+        <div class="row block-article col-md-8  col-sm-12">
           <!-- Debut de la boucle -->
           <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
-                <div class="card article col-sm-6">
+                <div class="card article col-lg-6 col-md-6 col-sm-6 col-12">
                     <div class="card-img-top" alt="...">
                       <?php
                         if ( has_post_thumbnail_or_image ()) { 
