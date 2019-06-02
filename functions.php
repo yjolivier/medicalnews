@@ -54,14 +54,6 @@ function medicalnews_excerpt($max_char, $more_link_text = '...',$notagp = false,
 	$content = str_replace(']]>', ']]&gt;', $content);
 	$content = strip_tags($content);
 
-	/*
-	 * USEFUL IN TEST MODE
-	 *
-		if (""==$content) {
-		$content = "Non a vel turpis tincidunt rhoncus magna mattis! Integer ac, lacus, elit. Et ac est cursus, etiam mus adipiscing auctor, elit vel mid mattis! Pid facilisis! Tincidunt. Lorem dictumst dapibus, tincidunt placerat vel dolor rhoncus rhoncus mid velit massa. Scelerisque! Porttitor placerat auctor a, turpis adipiscing et magna eros pulvinar aliquam aliquam enim pulvinar cum lorem tempor pulvinar cum. Dolor, a magnis, ultrices dis, tincidunt sed, adipiscing vel ridiculus. In augue tristique";
-		}
-	 *
-	 */
    if (isset($_GET['p']) && strlen($_GET['p']) > 0) {
 	  if($notagp) {
 	  echo $content;
