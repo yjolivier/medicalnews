@@ -183,3 +183,32 @@ class Multilevel_Menu extends Walker_Nav_Menu
 		call_user_func_array(array(&$this, 'end_el'), $cb_args);
 	}
 }
+
+/**
+ * Enqueue scripts and styles.
+ */
+function medicalnews_scripts() {
+    
+    // Google fonts
+    wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Montserrat:400,700', false ); 
+    // CSS
+	wp_enqueue_style( 'bootstrap-css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' );
+	wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' );
+	wp_enqueue_style( 'main-css', get_template_directory_uri().'/css/style.css' );
+    
+    // JS
+    wp_enqueue_script( 'jquery', 'https://code.jquery.com/jquery-3.3.1.slim.min.js' );
+    wp_enqueue_script( 'popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' );
+    wp_enqueue_script( 'bootstrap-js', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js' );
+	
+}
+
+function medicalnews_admin_js($hook) {
+    /*
+    if ( 'customize.php' != $hook ) {
+        return;
+    }
+    */
+    wp_enqueue_script( 'medicalnews_admin_js', get_template_directory_uri() . '/js/admin.js' );
+}
+add_action( 'wp_enqueue_scripts', 'medicalnews_scripts' );
