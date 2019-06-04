@@ -24,10 +24,10 @@ get_header(); ?>
                     <div class="card-body">
                       <p class="card-text">
                           <h5 class="title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h5>
-                  <p>
-                    <span class="time"><?php the_time('l d/m, Y');?></span>
-                    <span class="excerpt"><?php medicalnews_excerpt(80);?></span>
-                  </p>
+                      <p>
+                        <span class="time"><?php the_time('l d/m, Y');?></span>
+                        <span class="excerpt"><?php medicalnews_excerpt(80);?></span>
+                      </p>
                     </div>
                 </div>
             <!-- Fin de la boucle -->

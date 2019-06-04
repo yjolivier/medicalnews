@@ -12,7 +12,7 @@
 	<body>
 		<div class="container">
 			<header class="row">
-				<div class="col-sm-3 logo">
+				<div class="col-sm-3 col-12 logo">
 					<a href="<?php bloginfo('url')?>">
 					<h2>
 						Medical news
@@ -20,7 +20,7 @@
 					</a>
 					<h5>Actualité medical</h5>
 				</div>
-				<div class="col-sm-7 menu">
+				<div class="col-sm-7 col-12 menu">
 					<?php
 		                /* Dynamic menu */
 		                if(function_exists('wp_nav_menu')) {
@@ -37,7 +37,7 @@
 		                }
 		            ?>
 				</div>
-				<div class="col-sm-2">
+				<div class="col-sm-2 col-12">
 					<nav class="search-form">
 						<p><a href="#"></a></p>
 					</nav>

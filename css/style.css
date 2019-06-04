@@ -1,3 +1,28 @@
+/*
+================================================================================================
+Table of Content
+================================================================================================
+  11. body 
+  15. container
+  27. header
+  40. header logo
+  49. header menu
+  75. header searchform
+  89. slide
+  99. slide carousel-container
+  103. slide-article
+  123. carousel-control-prev and .carousel-control-next
+  149. block-article
+  176. footer
+
+  213. * Style page single*
+  228. * archive style*
+  281. Sidebar
+  289. aside .widget
+  397. Pagination
+  444. media queries 
+*/
+
 a {
 	color: #feb236;
 }
@@ -8,14 +33,20 @@ body{
 	background: white;
 	box-shadow: 0 3px 20px 0 rgba(0,0,0,.1);
 }
-
+/*
+================================================================================================
+Header style
+================================================================================================
+*/
 header{
-	height: 120px;
 	background: #192E65;
 }
+
+/*Block du logo */
 header .logo a{
 	text-decoration: none;
 }
+
 .logo{
 	padding:2%;
 	font-family: montserrat;
@@ -64,6 +95,11 @@ header .logo a{
 	text-decoration: none;
 	color: #feb236;
 }
+/*
+================================================================================================
+slide style
+================================================================================================
+*/
 .slide{
 	width: 100%;
 	background-size: cover;
@@ -248,6 +284,9 @@ footer .col-sm a{
 Sidebar
 ================================================================================================
 */
+aside iframe {
+	max-width: 100%;
+}
 aside .widget {
   max-width: 100%;
   margin-bottom: 15px;
@@ -398,3 +437,107 @@ ul.pagination li a, ul.pagination li {
 
 ul.pagination li.current a:hover, ul.pagination li.current a:focus, ul.pagination li.current button:hover, ul.pagination li.current button:focus {
   background: #feb236; }
+
+/*
+================================================================================================
+Media queries
+================================================================================================
+*/
+
+/*screen resolution <= 1024 */
+@media screen and (max-width: 1024px)
+{
+    /*slide personalisation */
+    .slide-article{
+	width: 50%;
+	bottom: 15%;
+	}
+
+	.slide-article p{
+	/*display: none;*/
+	}
+	.carousel-control-prev, .carousel-control-next{
+	height: 60px;
+	width: 4%;
+	margin-top: 15%;
+	}
+	.carousel-container .slide img{
+	height: 100%;
+	}
+
+
+}
+/*screen resolution <= 960 */
+
+@media screen and (max-width: 960px)
+{
+    /*slide personalisation */
+    .slide{
+    height: 300px;
+    }
+    .slide-article{
+	width: 50%;
+	bottom: 10%;
+	}
+
+	.slide-article p{
+	display: none;
+	}
+	.carousel-control-prev, .carousel-control-next{
+	height: 60px;
+	width: 4%;
+	margin-top: 20%;
+	}
+	.carousel-container .slide img{
+	height: 100%;
+	}
+	footer .col-sm{
+		text-align: left;
+	}
+
+}
+/*screen resolution <= 720 */
+
+@media screen and (max-width: 720px)
+{
+    /*slide personalisation */
+    .slide{
+    height: 300px;
+    }
+    .slide-article{
+	width: 50%;
+	bottom: 15%;
+	}
+
+	.slide-article p{
+	display: none;
+	}
+	.carousel-control-prev, .carousel-control-next{
+	height: 60px;
+	width: 4%;
+	margin-top: 30%;
+
+	}
+	.carousel-container .slide img{
+	height: 100%;
+	}
+
+}
+/*screen resolution <= 540 */
+
+@media screen and (max-width: 540px)
+{
+    /*slide personalisation */
+    .slide{
+    	height: 300px;
+    }
+    .slide-article{
+	width: 70%;
+	bottom: 15%;
+	margin-left: 15%;
+	}
+
+	.slide-article p{
+	display: none;
+	}
+}
