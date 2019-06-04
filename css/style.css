@@ -20,7 +20,8 @@ Table of Content
   281. Sidebar
   289. aside .widget
   397. Pagination
-  444. media queries 
+  444. media queries
+  x.0 - Navigation 
 */
 
 a {
@@ -30,7 +31,6 @@ body{
 	background-image:url(../img/back.png);
 }
 .container{
-	background: white;
 	box-shadow: 0 3px 20px 0 rgba(0,0,0,.1);
 }
 /*
@@ -57,43 +57,47 @@ header .logo a{
 .logo h2{
 	color: #feb236;
 }
-.menu{
-	text-align: center;
-	padding-top:3%;
+.navbar{
 	font-size: 1.2em;
-	align-items: center;
 }
-.menu ul{
+.navbar ul > li {
+	margin-right: 20px;
+}
+.navbar ul{
 	margin: auto;
 	display: flex;
 	list-style-type: none;
 	justify-content: space-between;
 	font-family: montserrat;
 }
-.menu ul a{
+.navbar ul a{
 	text-decoration: none;
 	color: #fff;
 }
 
-.menu ul a:hover, .menu-actif a{
+.navbar ul a:hover, .navbar-actif a{
 	background: #feb236;
 	border: 10px solid #feb236;
 	color: black;
 }
-.menu-actif a{
+.navbar-actif a{
 	color: black !important;
 }
-.search-form{
+.search-icon{
 	width: 50%;
-	border-left: 2px solid white;
+	height: 100%;
 	text-align: center;
 	font-family: 'FontAwesome';
 	font-size: 1.3em;
-	margin-top: 21%;
+	display: flex;
+	align-items: center;
 }
-.search-form a{
+.search-icon a{
 	text-decoration: none;
 	color: #feb236;
+	border-left: 2px solid white;
+	display: inline;
+	padding-left: 20px;
 }
 /*
 ================================================================================================
@@ -541,3 +545,5 @@ Media queries
 	display: none;
 	}
 }
+
+/*
