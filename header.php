@@ -8,7 +8,7 @@
 	<body>
 		<div class="container">
 			<header class="row">
-				<div class="col-sm-12 col-md-3 col-12 logo">
+				<div class="col-sm-12 col-md-5 col-12 logo">
 					<a href="<?php bloginfo('url')?>">
 					<h2>
 						Medical news
@@ -41,10 +41,5 @@
 					?>
 				  </div>
 				</nav>
-				<div class="col-sm-12 col-md-2 col-12 search-form-top">
-					<p class="search-icon">
-						<a href="#"></a>
-					</p>
-				</div>
 			</header>
 			<?php wp_head();?>

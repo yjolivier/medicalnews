@@ -2,36 +2,36 @@
 ================================================================================================
 Table of Content
 ================================================================================================
-  11. body 
-  15. container
-  27. header
-  40. header logo
-  49. header menu
-  75. header searchform
-  89. slide
-  99. slide carousel-container
-  103. slide-article
-  123. carousel-control-prev and .carousel-control-next
-  149. block-article
-  176. footer
+  1. body 
+  2. container
+  3. header
+  4. header logo
+  5. header menu
+  6. header searchform
+  7. slide
+  8. slide carousel-container
+  9. slide-article
+  10. carousel-control-prev and .carousel-control-next
+  11. block-article
+  12. footer
 
-  213. * Style page single*
-  228. * archive style*
-  281. Sidebar
-  289. aside .widget
-  397. Pagination
-  444. media queries
+  13. * Style page single*
+  14. * archive style*
+  15. Sidebar
+  16. aside .widget
+  17. Pagination
+  18. media queries
   x.0 - Navigation 
 */
-
-a {
-	color: #feb236;
-}
 body{
 	background-image:url(../img/back.png);
 }
 .container{
 	box-shadow: 0 3px 20px 0 rgba(0,0,0,.1);
+	background: white;
+}
+a {
+	color: #feb236;
 }
 /*
 ================================================================================================
@@ -83,21 +83,9 @@ header .logo a{
 .navbar-actif a{
 	color: black !important;
 }
-.search-icon{
-	width: 50%;
-	height: 100%;
-	text-align: center;
-	font-family: 'FontAwesome';
-	font-size: 1.3em;
+.navbar-toggler-icon{
 	display: flex;
-	align-items: center;
-}
-.search-icon a{
-	text-decoration: none;
-	color: #feb236;
-	border-left: 2px solid white;
-	display: inline;
-	padding-left: 20px;
+	justify-content: space-between;
 }
 /*
 ================================================================================================
@@ -124,9 +112,13 @@ slide style
 	position: absolute;
 	bottom: 55px;
 }
-.slide-article h4{
-	color: #616060;
+.slide-article a{
+	color: #483f3f;
 	font-weight: bold;
+}
+.slide-article a:hover{
+	text-decoration: none;
+	color: #616060;
 }
 .slide-article p{
 	color: #111111;
@@ -189,9 +181,10 @@ slide style
 	color: #8f6d0c;
 
 }
-section h3{
+.section-index h3{
 	color: #656262;
 	font-size: bold;
+	padding: 20px;
 }
 .card-body{
 	padding: 0px;
@@ -200,11 +193,11 @@ footer{
 	height: 100px;
 	background: #192E65;
 }
-footer .col-sm-3{
+footer .auteur{
 	padding-top: 3%;
 	padding-left: 2%;
 	color: #feb236;
-	font-size: 1.2em;
+	font-size: 1em;
 	font-family: montserrat;
 }
 footer .col-sm{
@@ -241,6 +234,7 @@ footer .col-sm a{
 	position: relative;
 	background-color: #192E65;
 	overflow: hidden;
+
 }
 .slide-archive img{
 	opacity: .4;

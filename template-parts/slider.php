@@ -2,33 +2,35 @@
 <div class="row carousel-container">
 	<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
 		<div class="carousel-inner">
-      <?php
-        $nbr_slide = 1 ;
-        while ( $nbr_slide <= 3):
+      <!--Debut de la boucle-->
+      <?php if (have_posts()) : ?>
+        <?php while (have_posts()) : the_post();
+          
           $slide_status = "";
           if($nbr_slide ==1) {
            $slide_status = "active";
           }?>
 
-  <div class="carousel-item slide <?php echo $slide_status;?>">
-    <img src="<?php echo get_bloginfo('template_url') . "/img/slide_" . $nbr_slide . ".jpg"; ?>" width="100%" height="auto">
-      <div class="slide-article">
-        <h4>
-          Insuffisance
-      Cardiaque: Décelée
-      par un test sanguin
-        </h4>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur
-      adipiscing elit, sed do eiusmod tempor incididunt
-      ut labore et dolore magna aliqua.project
-      imagesProvide extra support for senior citizen
-        </p>
+      <div class="carousel-item slide <?php echo $slide_status;?>">
+        <?php
+                  if ( has_post_thumbnail_or_image ()) { 
+                      the_post_thumbnail( "slider-cover" ); 
+                  }
+                ?>
+            <div class="slide-article">
+              <!--Debut de la boucle-->
+                  <h4>
+                    <a href="<?php the_permalink();?>"><?php the_title();?></a>
+                  </h4>
+                  <p>
+                    <span class="excerpt"><?php medicalnews_excerpt(120);?></span>
+                  </p>
+            </div>
       </div>
-  </div>
           <?php
           $nbr_slide++;
   		  endwhile;
+      endif;
       ?>
 		</div>
 		<a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">

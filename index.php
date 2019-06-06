@@ -5,13 +5,13 @@
   get_template_part('template-parts/slider');
 
 ?>
-<section>
+<section class="section-index">
   <h3 align="center">ACTUALITE</h3>
   <hr width="80%" size="0.25" color="#ccc">
 	<div class="row block-article">
     <!-- Debut de la boucle -->
     <?php if (have_posts()) : ?>
-      <?php while (have_posts()) : the_post(); ?>
+    <?php while (have_posts()) : the_post(); ?>
 	        <div class="card article col-md-4 col-sm-6 col-12">
 	            <div class="card-img-top" alt="...">
                 <?php
@@ -23,10 +23,10 @@
 	            <div class="card-body">
 	              <p class="card-text">
 	                  <h5 class="title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h5>
-	          <p>
-              <span class="time"><?php the_time('l d/m, Y');?></span>
-              <span class="excerpt"><?php medicalnews_excerpt(80);?></span>
-            </p>
+    	          <p>
+                  <span class="time"><?php the_time('l d/m, Y');?></span>
+                  <span class="excerpt"><?php medicalnews_excerpt(80);?></span>
+                </p>
 	            </div>
 	        </div>
       <!-- Fin de la boucle -->
