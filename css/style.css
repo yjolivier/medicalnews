@@ -101,6 +101,7 @@ slide style
 }
 .carousel-container .slide img{
 	width: 100%;
+	height: auto;
 }
 .slide-article{
 	width: 37%;
@@ -189,6 +190,11 @@ slide style
 .card-body{
 	padding: 0px;
 }
+/*
+================================================================================================
+Sidebar
+================================================================================================
+*/
 footer{
 	height: 100px;
 	background: #192E65;
@@ -206,10 +212,14 @@ footer .col-sm{
 	color: #feb236;
 	text-align: right;
 }
-footer .col-sm a{
+footer a{
 	text-decoration: none;
 	color: #feb236;
 	margin-left: 4%;
+}
+footer a:hover{
+	text-decoration: none;
+	color: #c6c6ce;
 }
 /* Style page single*/
 
@@ -389,7 +399,9 @@ aside .recent-posts-box ul li a {
   font-size: 0.8em; }
 
 .widget ul li a:hover {
-  color: #3da05b; }
+  color: #feb236;
+  text-decoration: none; 
+}
 
 /*
 ================================================================================================

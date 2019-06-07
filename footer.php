@@ -1,6 +1,6 @@
 			<footer class="row">
 							<div class="col-sm-5 col-12 auteur ">
-								© 2019 Medical News | developpé par <a href="https://github.com/yjolivier" target="_blanck">Olivier Yao</a>
+								© 2019 Medical News | developpé par<a href="https://github.com/yjolivier" target="_blanck">Olivier Yao</a>
 							</div>
 							<div class="col-sm col-12">
 								<a href="#"><i style="font-size:24px" class="fa">&#xf0d5;</i></a>
