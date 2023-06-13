@@ -190,7 +190,7 @@ class Multilevel_Menu extends Walker_Nav_Menu
 function medicalnews_scripts() {
     
     // Google fonts
-    wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Montserrat:400,700', false ); 
+    wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,700', false ); 
     // CSS
 	wp_enqueue_style( 'bootstrap-css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' );
 	wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' );
